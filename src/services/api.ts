@@ -13,8 +13,8 @@ const api = axios.create({
 });
 
 // Add API key if available (for rate limiting improvements)
-if (process.env.COINGECKO_API_KEY) {
-  api.defaults.headers.common['x-cg-demo-api-key'] = process.env.COINGECKO_API_KEY;
+if (import.meta.env.VITE_COINGECKO_API_KEY) {
+  api.defaults.headers.common['x-cg-demo-api-key'] = import.meta.env.VITE_COINGECKO_API_KEY;
 }
 
 export class CoinGeckoAPI {
